@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7653d6">
+<meta name="description" content="Digi Order crée des sites vitrines modernes et adaptés aux téléphones pour les professionnels.">
+<title>Digi Order — Votre présence en ligne</title>
+
+<style>
+:root {
+  --violet:#7653d6;
+  --violet-dark:#5436ad;
+  --lavender:#f1edff;
+  --ink:#211b35;
+  --muted:#6d687b;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.6;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+.container {
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+header {
+  position:sticky;
+  top:0;
+  background:rgba(255,255,255,.96);
+  z-index:10;
+  border-bottom:1px solid #eee;
+}
+
+nav {
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.logo {
+  font-size:1.45rem;
+  font-weight:900;
+  color:var(--violet-dark);
+}
+
+.navlinks {
+  display:flex;
+  gap:22px;
+  font-weight:700;
+  font-size:.95rem;
+}
+
+.navlinks a:hover {
+  color:var(--violet);
+}
+
+.hero {
+  background:linear-gradient(135deg,#f5f1ff,#fff 60%,#eee8ff);
+  padding:82px 0 88px;
+  text-align:center;
+}
+
+.tag {
+  display:inline-block;
+  background:#e7ddff;
+  color:var(--violet-dark);
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:.85rem;
+  font-weight:800;
+}
+
+h1 {
+  font-size:clamp(2.3rem,6vw,4.4rem);
+  line-height:1.08;
+  letter-spacing:-2px;
+  margin:20px auto;
+  max-width:850px;
+}
+
+h1 span {
+  color:var(--violet);
+}
+
+.hero p {
+  font-size:1.12rem;
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto 28px;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 21px;
+  border-radius:12px;
+  font-weight:800;
+  background:var(--violet);
+  color:white;
+  border:2px solid var(--violet);
+  transition:.2s;
+}
+
+.btn:hover {
+  background:var(--violet-dark);
+  border-color:var(--violet-dark);
+  transform:translateY(-2px);
+}
+
+.btn.outline {
+  background:white;
+  color:var(--violet);
+  margin-left:8px;
+}
+
+section {
+  padding:68px 0;
+}
+
+.section-head {
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 36px;
+}
+
+h2 {
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  line-height:1.2;
+  margin:0 0 12px;
+  letter-spacing:-1px;
+}
+
+.section-head p,
+.muted {
+  color:var(--muted);
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card {
+  padding:25px;
+  border:1px solid #e9e4f5;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 8px 28px rgba(45,25,90,.05);
+}
+
+.symbol {
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  background:var(--lavender);
+  display:grid;
+  place-items:center;
+  font-size:1.45rem;
+  margin-bottom:14px;
+}
+
+.card h3 {
+  margin:0 0 8px;
+  font-size:1.18rem;
+}
+
+.about {
+  background:#f8f6ff;
+}
+
+.about-inner {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+
+.about-panel {
+  background:linear-gradient(135deg,#7653d6,#9b7ce9);
+  color:#fff;
+  padding:34px;
+  border-radius:22px;
+}
+
+.about-panel strong {
+  font-size:1.5rem;
+  display:block;
+  margin-bottom:10px;
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.step-number {
+  font-size:1.8rem;
+  font-weight:900;
+  color:var(--violet);
+}
+
+.contact {
+  background:linear-gradient(135deg,#f2edff,#fff);
+}
+
+.contact-box {
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+  background:#fff;
+  padding:36px 25px;
+  border-radius:22px;
+  box-shadow:0 12px 35px rgba(45,25,90,.08);
+}
+
+.contact-actions {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-top:22px;
+}
+
+.contact-actions .btn.outline {
+  margin:0;
+}
+
+footer {
+  padding:25px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem;
+  border-top:1px solid #eee;
+}
+
+@media(max-width:760px) {
+  .navlinks {
+    gap:12px;
+    font-size:.82rem;
+  }
+
+  .cards,
+  .steps {
+    grid-template-columns:1fr;
+  }
+
+  .about-inner {
+    grid-template-columns:1fr;
+  }
+
+  .hero {
+    padding:62px 0;
+  }
+
+  .btn.outline {
+    margin:10px 0 0;
+  }
+
+  .navlinks a:nth-child(2) {
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#">Digi Order</a>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#agence">L'agence</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <span class="tag">CRÉATION DE SITES VITRINES</span>
+
+    <h1>
+      Votre activité mérite<br>
+      <span>un site qui fait bonne impression.</span>
+    </h1>
+
+    <p>
+      Digi Order accompagne les professionnels dans la création
+      d'un site vitrine moderne, clair et adapté aux téléphones.
+    </p>
+
+    <a class="btn" href="#contact">Parler de mon projet</a>
+    <a class="btn outline" href="#services">Découvrir les services</a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Des sites pensés pour votre activité</h2>
+      <p>
+        Une présence en ligne simple et professionnelle pour présenter
+        votre entreprise et permettre à vos clients de vous contacter.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="symbol">🌐</div>
+        <h3>Site vitrine</h3>
+        <p class="muted">
+          Présentez votre activité, vos services et vos informations
+          essentielles sur une page claire et professionnelle.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="symbol">📱</div>
+        <h3>Adapté au téléphone</h3>
+        <p class="muted">
+          Un affichage conçu pour être agréable à consulter sur
+          smartphone, tablette et ordinateur.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="symbol">✨</div>
+        <h3>Design personnalisé</h3>
+        <p class="muted">
+          Une présentation moderne, avec des couleurs et une identité
+          visuelle adaptées à votre activité.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="agence">
+  <div class="container about-inner">
+
+    <div>
+      <h2>Une présence en ligne à votre image</h2>
+
+      <p class="muted">
+        Digi Order a pour objectif de rendre la création d'un site
+        vitrine plus simple. Chaque projet est pensé pour mettre
+        en valeur votre activité et donner à vos visiteurs
+        les bonnes informations.
+      </p>
+
+      <p class="muted">
+        Vous avez une idée ou souhaitez améliorer votre présence
+        sur Internet ? Parlons-en.
+      </p>
+    </div>
+
+    <div class="about-panel">
+      <strong>Votre activité. Votre image. Votre site.</strong>
+      Un site bien présenté aide vos futurs clients à découvrir
+      ce que vous proposez et à prendre contact facilement.
+    </div>
+
+  </div>
+</section>
+
+<section id="etapes">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Comment ça se passe ?</h2>
+      <p>Un parcours simple, de votre idée à la mise en ligne.</p>
+    </div>
+
+    <div class="steps">
+
+      <article class="card">
+        <div class="step-number">01</div>
+        <h3>On échange</h3>
+        <p class="muted">
+          Vous présentez votre activité et vos besoins.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="step-number">02</div>
+        <h3>On construit</h3>
+        <p class="muted">
+          Le site est préparé selon votre projet et votre identité.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="step-number">03</div>
+        <h3>On publie</h3>
+        <p class="muted">
+          Après validation, votre site peut être mis en ligne.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="contact-box">
+      <h2>Parlons de votre projet</h2>
+
+      <p class="muted">
+        Vous souhaitez créer un site vitrine pour votre activité ?
+        Contactez Digi Order pour en discuter.
+      </p>
+
+      <div class="contact-actions">
+
+        <!-- WHATSAPP AVEC MESSAGE PRÉÉCRIT -->
+        <a
+          class="btn"
+          href="https://wa.me/33751213721?text=Bonjour%20Digi%20Order%20%21%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20vitrine%20pour%20mon%20activit%C3%A9.%20Pouvez-vous%20m%27en%20dire%20plus%20%3F"
+          target="_blank"
+          rel="noopener"
+        >
+          Contacter sur WhatsApp
+        </a>
+
+        <!-- SMS -->
+        <a class="btn outline" href="sms:+33751213721">
+          Envoyer un SMS
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Digi Order — Tous droits réservés.
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
