@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digi Order crée des sites vitrines modernes et professionnels pour les entreprises.">
+<title>Digi Order | Création de sites vitrines</title>
+
+<style>
+:root {
+  --violet: #7943d5;
+  --violet-dark: #35205b;
+  --violet-light: #eee6ff;
+  --text: #261c38;
+  --muted: #746b83;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: #fbfaff;
+}
+
+a { text-decoration: none; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 20px #24133d10;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--violet);
+  letter-spacing: -1px;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav a:hover { color: var(--violet); }
+
+.hero {
+  padding: 110px 7%;
+  text-align: center;
+  background: linear-gradient(135deg,#eee5ff,#fff,#e7dcff);
+}
+
+.tag {
+  display: inline-block;
+  background: white;
+  color: var(--violet);
+  border: 1px solid #e0d0ff;
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(38px,7vw,68px);
+  line-height: 1.12;
+  margin-bottom: 24px;
+}
+
+.hero h1 span { color: var(--violet); }
+
+.hero p {
+  max-width: 680px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 25px;
+  background: var(--violet);
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  margin: 25px 5px 0;
+  transition: .2s;
+  border: 1px solid var(--violet);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: #6030b4;
+}
+
+.btn-white {
+  background: white;
+  color: var(--violet);
+}
+
+section {
+  padding: 80px 7%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto 42px;
+  line-height: 1.8;
+}
+
+.services-grid,
+.portfolio-grid,
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 23px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #eee8f8;
+  border-radius: 20px;
+  padding: 30px 24px;
+  box-shadow: 0 6px 25px #2b174008;
+  text-align: left;
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #2b174015;
+}
+
+.emoji {
+  font-size: 40px;
+  margin-bottom: 17px;
+}
+
+.card h3 {
+  color: var(--violet);
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.about {
+  background: var(--violet-light);
+}
+
+.about-content {
+  max-width: 760px;
+  margin: auto;
+}
+
+.about-content p {
+  color: #5f536f;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.portfolio-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 6px 25px #2b174010;
+  border: 1px solid #eee8f8;
+}
+
+.portfolio-visual {
+  min-height: 175px;
+  display: grid;
+  place-items: center;
+  font-size: 65px;
+}
+
+.restaurant { background: linear-gradient(135deg,#f9e6d5,#eec6a6); }
+.coiffure { background: linear-gradient(135deg,#29252f,#806d8e); }
+.batiment { background: linear-gradient(135deg,#dceaff,#9dbce8); }
+
+.portfolio-info { padding: 24px; }
+
+.portfolio-info h3 {
+  margin-bottom: 10px;
+  color: var(--violet);
+}
+
+.portfolio-info p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.demo {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--violet-light);
+  color: var(--violet);
+  border-radius: 7px;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.steps {
+  background: #f6f2ff;
+}
+
+.step {
+  background: white;
+  border-radius: 18px;
+  padding: 28px 20px;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  background: var(--violet-light);
+  color: var(--violet);
+  height: 48px;
+  width: 48px;
+  margin: 0 auto 17px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.step h3 { margin-bottom: 10px; }
+
+.step p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.contact {
+  background: linear-gradient(135deg,#7943d5,#48277e);
+  color: white;
+}
+
+.contact .subtitle { color: #e6dafa; }
+
+.contact .btn {
+  background: white;
+  color: var(--violet);
+  border-color: white;
+}
+
+.contact .btn-outline {
+  background: transparent;
+  color: white;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 35px auto 0;
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  color: var(--text);
+  font-weight: bold;
+  margin: 16px 0 8px;
+  font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e1d9ed;
+  border-radius: 9px;
+  font: inherit;
+  background: #fcfaff;
+  color: var(--text);
+}
+
+.contact-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+footer {
+  background: #21143d;
+  color: #d9c9ef;
+  padding: 35px 7%;
+  text-align: center;
+  line-height: 2;
+  font-size: 14px;
+}
+
+footer .logo { color: white; }
+
+@media(max-width:700px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px 4%;
+  }
+
+  nav {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a { font-size: 12px; }
+
+  .hero { padding: 80px 6%; }
+  section { padding: 65px 6%; }
+  .section-title { font-size: 30px; }
+  .contact-form { padding: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">DIGI ORDER.</div>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Réalisations</a>
+    <a href="#agence">Agence</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ACCUEIL -->
+
+<section class="hero" id="accueil">
+  <div class="tag">CRÉATION DE SITES VITRINES</div>
+
+  <h1>
+    Votre entreprise.<br>
+    <span>Notre expertise digitale.</span>
+  </h1>
+
+  <p>
+    Nous créons des sites internet modernes et professionnels
+    pour donner à votre entreprise une présence en ligne
+    à la hauteur de vos ambitions.
+  </p>
+
+  <a href="#contact" class="btn">Parler de mon projet →</a>
+  <a href="#portfolio" class="btn btn-white">Découvrir nos exemples</a>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+  <h2 class="section-title">Nos services</h2>
+  <p class="subtitle">
+    Tout ce qu'il faut pour présenter votre entreprise
+    efficacement sur Internet.
+  </p>
+
+  <div class="services-grid">
+
+    <div class="card">
+      <div class="emoji">🌐</div>
+      <h3>Site vitrine</h3>
+      <p>Présentez votre entreprise, votre activité et vos prestations avec un site professionnel.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📱</div>
+      <h3>Adapté aux mobiles</h3>
+      <p>Votre site sera conçu pour être agréable à consulter sur téléphone, tablette et ordinateur.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🎨</div>
+      <h3>Design personnalisé</h3>
+      <p>Une présentation adaptée à votre identité et à l'image de votre entreprise.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📩</div>
+      <h3>Contact simplifié</h3>
+      <p>Des boutons pour permettre à vos visiteurs de vous contacter facilement.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio" style="background:#f5f1ff">
+  <h2 class="section-title">Nos réalisations</h2>
+  <p class="subtitle">
+    Découvrez des exemples de projets que Digi Order
+    peut concevoir pour différents secteurs d'activité.
+  </p>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <div class="portfolio-visual restaurant">🍽️</div>
+      <div class="portfolio-info">
+        <h3>Restaurant</h3>
+        <p>
+          Un site chaleureux pour présenter un restaurant,
+          sa carte, ses spécialités et ses coordonnées.
+        </p>
+        <span class="demo">PROJET DE DÉMONSTRATION</span>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-visual coiffure">💈</div>
+      <div class="portfolio-info">
+        <h3>Salon de coiffure</h3>
+        <p>
+          Un site moderne pour présenter les prestations,
+          les tarifs et les horaires d'un salon.
+        </p>
+        <span class="demo">PROJET DE DÉMONSTRATION</span>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-visual batiment">🏗️</div>
+      <div class="portfolio-info">
+        <h3>Entreprise de bâtiment</h3>
+        <p>
+          Une vitrine professionnelle pour présenter
+          les services et faciliter les demandes de devis.
+        </p>
+        <span class="demo">PROJET DE DÉMONSTRATION</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AGENCE -->
+
+<section class="about" id="agence">
+  <div class="about-content">
+    <h2 class="section-title">À propos de Digi Order</h2>
+    <p>
+      Digi Order est une agence spécialisée dans la création
+      de sites vitrines pour les entreprises et les professionnels.
+      <br><br>
+      Notre objectif est simple : aider les entreprises à
+      développer leur présence sur Internet grâce à des sites
+      modernes, élégants et faciles à utiliser.
+      <br><br>
+      Chaque projet mérite une attention particulière.
+    </p>
+  </div>
+</section>
+
+<!-- ETAPES -->
+
+<section class="steps">
+  <h2 class="section-title">Comment ça marche ?</h2>
+  <p class="subtitle">
+    La création de votre site en trois grandes étapes.
+  </p>
+
+  <div class="steps-grid">
+
+    <div class="step">
+      <div class="number">1</div>
+      <h3>Échange</h3>
+      <p>Vous nous expliquez votre entreprise et vos besoins.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">2</div>
+      <h3>Conception</h3>
+      <p>Nous préparons une proposition de site adaptée à votre activité.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">3</div>
+      <h3>Mise en ligne</h3>
+      <p>Après validation et finalisation, votre site peut être publié.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Parlons de votre projet !</h2>
+
+  <p class="subtitle">
+    Vous souhaitez créer un site vitrine pour votre entreprise ?
+    Contactez Digi Order pour discuter de votre projet.
+  </p>
+
+  <a class="btn"
+    href="https://wa.me/33751213721?text=Bonjour%20Digi%20Order%2C%20je%20souhaite%20discuter%20de%20la%20creation%20d'un%20site%20vitrine."
+    target="_blank" rel="noopener">
+    WhatsApp
+  </a>
+
+  <a class="btn btn-outline"
+    href="sms:+33751213721?body=Bonjour%20Digi%20Order%2C%20je%20souhaite%20discuter%20de%20la%20creation%20d'un%20site%20vitrine.">
+    Envoyer un SMS
+  </a>
+
+  <!-- FORMULAIRE -->
+
+  <form class="contact-form" id="devis-form">
+    <h3 style="color:#35205b;text-align:center">
+      Demander un devis
+    </h3>
+
+    <label for="nom">Votre nom</label>
+    <input id="nom" name="nom" required placeholder="Votre nom">
+
+    <label for="entreprise">Nom de votre entreprise</label>
+    <input id="entreprise" name="entreprise" placeholder="Votre entreprise">
+
+    <label for="email">Votre adresse e-mail</label>
+    <input id="email" name="email" type="email" required placeholder="exemple@email.com">
+
+    <label for="projet">Votre projet</label>
+    <select id="projet" name="projet" required>
+      <option value="">Choisissez votre activité</option>
+      <option>Restaurant</option>
+      <option>Commerce</option>
+      <option>Salon de coiffure</option>
+      <option>Artisan / BTP</option>
+      <option>Autre activité</option>
+    </select>
+
+    <label for="message">Décrivez votre projet</label>
+    <textarea id="message" name="message" required placeholder="Expliquez-nous votre besoin..."></textarea>
+
+    <button class="btn" type="submit">
+      Envoyer ma demande
+    </button>
+
+    <p style="font-size:12px;color:#746b83;margin-top:12px">
+      Le formulaire prépare un message WhatsApp.
+      Vérifiez les informations avant de l'envoyer.
+    </p>
+  </form>
+</section>
+
+<footer>
+  <div class="logo">DIGI ORDER.</div>
+  Création de sites vitrines professionnels.
+  <br>
+  Contact : WhatsApp et SMS
+  <br>
+  © 2026 Digi Order. Tous droits réservés.
+</footer>
+
+<script>
+document.getElementById("devis-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const nom = document.getElementById("nom").value;
+  const entreprise = document.getElementById("entreprise").value;
+  const email = document.getElementById("email").value;
+  const projet = document.getElementById("projet").value;
+  const message = document.getElementById("message").value;
+
+  const texte =
+    "Bonjour Digi Order ! Je souhaite demander un devis.%0A%0A" +
+    "Nom : " + encodeURIComponent(nom) + "%0A" +
+    "Entreprise : " + encodeURIComponent(entreprise) + "%0A" +
+    "Email : " + encodeURIComponent(email) + "%0A" +
+    "Activité : " + encodeURIComponent(projet) + "%0A" +
+    "Projet : " + encodeURIComponent(message);
+
+  window.open("https://wa.me/33751213721?text=" + texte, "_blank");
+});
+</script>
+
+</body>
+  </html>
+  
